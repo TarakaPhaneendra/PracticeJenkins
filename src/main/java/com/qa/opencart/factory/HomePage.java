@@ -1,8 +1,9 @@
 package com.qa.opencart.factory;
 
 import com.microsoft.playwright.Page;
+import com.qa.opencart.base.BaseTest;
 
-public class HomePage {
+public class HomePage extends BaseTest{
 private Page page;
 
 //1. String Locators  -  OR
