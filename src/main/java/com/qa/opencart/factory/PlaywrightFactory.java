@@ -55,7 +55,7 @@ public Page initBrowser(Properties prop) {
 
 public Properties init_prop() {
 	try {
-		FileInputStream ip = new FileInputStream("./src/main/java/config/config.properties");
+FileInputStream ip = new FileInputStream("./src/main/java/com/qa/opencart/tests/config.properties");
 		prop = new Properties();
 		prop.load(ip);
 	} catch (FileNotFoundException e) {

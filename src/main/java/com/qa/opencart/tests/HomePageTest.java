@@ -1,29 +1,25 @@
 package com.qa.opencart.tests;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.microsoft.playwright.Page;
 import com.qa.opencart.base.BaseTest;
 import com.qa.opencart.constants.AppConstants;
-import com.qa.opencart.factory.HomePage;
-import com.qa.opencart.factory.PlaywrightFactory;
-
 public class HomePageTest extends BaseTest{
+	
 
-
-@Test
+@Test(priority=1)
 public void homePageTitleTest() {
-	String actualTitle =homePage.getHomePageTitle();
-	Assert.assertEquals(actualTitle, AppConstants.LOGIN_PAGE_TITLE);
+	String actualTitle = homePage.getHomePageTitle();
+	System.out.println(actualTitle);
+	System.out.println(AppConstants.HOME_PAGE_TITLE);
+	Assert.assertEquals(actualTitle, AppConstants.HOME_PAGE_TITLE);
 }
 
-@Test
+@Test(priority=2)
 public void homePageURLTest() {
-	String actualURL = homePage.getHomePageTitle();
+	String actualURL = homePage.getHomePageURL();
 	
 	Assert.assertEquals(actualURL, prop.getProperty("url"));
 }
@@ -37,7 +33,7 @@ public Object[][] getProductData(){
 		
 	};
 }
-@Test(dataProvider ="getProductData")
+@Test(dataProvider ="getProductData",priority=3)
 public void searchTest(String productName) {
 	String actualSearchHeader = homePage.doSearch(productName);
 	Assert.assertEquals(actualSearchHeader, "Search - "+productName);

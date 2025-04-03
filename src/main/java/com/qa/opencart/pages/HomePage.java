@@ -1,7 +1,8 @@
-package com.qa.opencart.factory;
+package com.qa.opencart.pages;
 
 import com.microsoft.playwright.Page;
 import com.qa.opencart.base.BaseTest;
+import com.qa.opencart.pages.LoginPage;
 
 public class HomePage extends BaseTest{
 private Page page;
@@ -11,8 +12,8 @@ private Page page;
 private String search ="input[name='search']";
 private String searchIcon = "div#search button";
 private String searchPageHeader ="div#content h1";
-
-
+private String loginLink = "//a[text()='Login']";
+private String myAccountLink = "//span[text()='My Account']";
 //2. page constructor:
 public HomePage(Page page) {
 	this.page = page;
@@ -38,5 +39,11 @@ public String doSearch(String productName) {
 	System.out.println("search header: " +header);
 	return header;
 	
+}
+
+public LoginPage navigateToLoginPage() {
+	page.click(myAccountLink);
+	page.click(loginLink);
+	return new LoginPage(page);
 }
 }
