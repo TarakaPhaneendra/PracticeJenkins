@@ -31,7 +31,7 @@ public static Playwright getPlaywright() {
 public static Browser getBrowser() {
 	return tlBrowser.get();
 }
-public static BrowserContext getBrowserContext() {
+public static BrowserContext tgetBrowserContext() {
 	return tlBrowserContext.get();
 }
 public static Page getPage() {
