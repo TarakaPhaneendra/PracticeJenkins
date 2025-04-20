@@ -11,6 +11,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
@@ -58,6 +59,8 @@ public synchronized void onStart(ITestContext context) {
 @Override
 public synchronized void onFinish(ITestContext context) {
 	System.out.println(("Test Suite is ending!"));
+	extent.flush();
+	test.remove();
 }
 @Override
 public synchronized void onTestStart(ITestResult result) {

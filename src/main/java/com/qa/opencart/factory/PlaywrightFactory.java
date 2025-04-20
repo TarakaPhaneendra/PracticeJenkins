@@ -40,7 +40,7 @@ public static Page getPage() {
 
 public Page initBrowser(Properties prop) {
 	String browserName = prop.getProperty("browser").trim();
-	System.out.println("browser naem is :"+browserName);
+	System.out.println("browser name is :"+browserName);
 	
 	//playwright = Playwright.create();
 	tlPlaywright.set(Playwright.create());
