@@ -26,11 +26,12 @@
     <version>1.50.0</version>
 </dependency>
 <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 <dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
-    <version>7.11.0</version>
-    
+    <version>7.10.2</version>
+    <scope>test</scope>
 </dependency>
 <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 <dependency>
@@ -60,16 +61,25 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.13.0</version>
         </plugin>
-        <plugin>
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-report-plugin -->
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-report-plugin</artifactId>
+    <version>3.5.2</version>
+</plugin>
+     <plugin>
   <groupId>org.apache.maven.plugins</groupId>
   <artifactId>maven-surefire-plugin</artifactId>
   <version>3.3.0</version>
   <configuration>
+    <argLine>-Xms128m -Xmx512m</argLine>
     <suiteXmlFiles>
-      <suiteXmlFile>src/main/java/testrunners/testng_regressions.xml</suiteXmlFile>
+      <suiteXmlFile>src//test//java//testrunners//testng_regressions.xml</suiteXmlFile>
     </suiteXmlFiles>
   </configuration>
 </plugin>
+   
+     
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.4.2</version>
